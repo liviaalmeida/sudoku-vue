@@ -1,0 +1,32 @@
+$box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.75);
+$box-shadow-in: inset $box-shadow;
+
+button {
+	border: none;
+	background-color: $main-purple;
+	color: white;
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+	cursor: pointer;
+
+	&:focus {
+		outline-color: transparent;
+		-webkit-box-shadow: $box-shadow-in;
+		-moz-box-shadow: $box-shadow-in;
+		box-shadow: $box-shadow-in;
+
+	}
+
+	&.regular {
+		padding: 5px 10px;
+		border-radius: 3px;
+	}
+
+	&.round {
+		font-weight: 700;
+		font-size: 18px;
+		padding: 8px 10px 4px;
+		border-radius: 50%;
+	}
+}

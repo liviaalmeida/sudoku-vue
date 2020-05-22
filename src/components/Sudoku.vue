@@ -1,19 +1,18 @@
 <template>
-  <div class="home">
+	<div class="sudoku">
 		<div class="buttons">
-			<button class="regular">New</button>
-			<button class="regular">Reset</button>
+			<button>New</button>
+			<button>Reset</button>
 		</div>
 		<Loading />
 		<Board />
 		<div class="buttons">
-			<span class="undo-redo">
-				<button class="round">&#8630;</button>
-				<button class="round">&#8631;</button>
-			</span>
 			<Checkbox text="Validate" :onChange="validate"/>
+			<button>&#8630;</button>
+			<button>&#8631;</button>
 		</div>
-  </div>
+		<div class="buttons"></div>
+	</div>
 </template>
 
 <script lang="ts">
@@ -23,11 +22,11 @@ import Board from '@/components/Board.vue'
 import Checkbox from '@/components/Checkbox.vue'
 
 export default Vue.extend({
-	name: 'Home' as string,
+	name: 'Sudoku' as string,
 	components: {
+		Loading,
 		Board,
-		Checkbox,
-		Loading
+		Checkbox
 	},
 	props: {
 
@@ -45,25 +44,14 @@ export default Vue.extend({
 	methods: {
 		validate({ target }: Event) {
 			const checked = (target as HTMLInputElement).checked
+			console.log('validate?', checked)
 		}
 	}
 })
 </script>
 
 <style lang="scss">
-@import "~@/assets/scss/button.scss";
-
-.home {
-	display: flex;
-	flex-direction: column;
-
-	.buttons {
-		display: flex;
-		justify-content: space-around;
-
-		.undo-redo button:last-child {
-			margin-left: 5px;
-		}
-	}
+.sudoku {
+	display: inline-flex;
 }
 </style>
