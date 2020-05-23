@@ -1,13 +1,16 @@
 <template>
   <div id="app">
     <header>
-      <router-link to="/">
-        <img alt="Vue logo" class="logo" src="./assets/logo.png">
-      </router-link>
-      <h1>Sudoku Vue</h1>
+      <div class="pseudo-button">00:00:00</div>
+      <span class="page-title">
+        <router-link to="/">
+          <img alt="Vue logo" class="logo" src="./assets/logo.png">
+        </router-link>
+        <h1>Sudoku Vue</h1>
+      </span>
+      <router-link to="/score" class="pseudo-button score">Score</router-link>
     </header>
     <nav>
-      <router-link to="/score" class="score">Score</router-link>
       <router-link to="/" class="close">X</router-link>
     </nav>
     <router-view/>
@@ -36,31 +39,48 @@ html, body, #app {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 0;
+  justify-content: space-between;
+  padding: 15px 10px;
   background-color: $main-green;
   color: white;
   font-weight: 700;
+  position: relative;
+
+  .pseudo-button {
+    color: $main-green;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  .page-title {
+    display: flex;
+    align-items: center;
+  }
 
   .logo {
     height: 30px;
-    margin-right: 15px;
+    margin-right: 5px;
+  }
+
+  .score {
+    text-decoration-line: none;
+  }
+
+  .logo:hover, .score:hover {
+    animation: jello .5s 1 ease-in-out;
   }
 }
 
-$nav-hmargin: 15px;
-
 nav {
   display: flex;
-  justify-content: space-between;
-  margin: $nav-hmargin 5px $nav-hmargin 47%;
+  justify-content: flex-end;
+  margin: 5px 10px;
 
   a {
     color: $main-green;
     text-decoration-line: none;
-
-    // &.router-link-exact-active {
-    // }
 
     &.score {
       font-weight: bold;

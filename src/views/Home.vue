@@ -4,7 +4,7 @@
 			<button class="regular">New</button>
 			<button class="regular">Reset</button>
 		</div>
-		<Loading />
+		<Loading class="loader" />
 		<Board />
 		<div class="buttons">
 			<span class="undo-redo">
@@ -56,6 +56,7 @@ export default Vue.extend({
 .home {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 
 	.buttons {
 		display: flex;
@@ -65,6 +66,11 @@ export default Vue.extend({
 		.undo-redo button:last-child {
 			margin-left: 5px;
 		}
+	}
+
+	.loader {
+		position: absolute;
+		top: 43%;
 	}
 }
 </style>
