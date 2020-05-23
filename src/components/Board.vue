@@ -74,12 +74,17 @@ $board-border: 2px solid $main-purple;
 
 	table {
 		table-layout: fixed;
+		max-width: 90%;
 	}
+
+	$input-max-size: 35px;
 
 	input {
 		text-align: center;
 		border: none;
-		padding: 10px 0;
+		padding: 15px 0;
+		max-width: $input-max-size;
+		max-height: $input-max-size;
 
 		&:focus {
 			outline: 1px solid transparent;

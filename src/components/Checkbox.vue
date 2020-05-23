@@ -59,26 +59,4 @@ $checkbox-size: 20px;
 		padding: 0px;
 	}
 }
-
-@keyframes jello {
-	40% {
-		transform: scale(0.6, 1.4);
-	}
-
-	50% {
-		transform: scale(1.4, 0.6);
-	}
-
-	60% {
-		transform: scale(0.7, 1.3);
-	}
-
-	70% {
-		transform: scale(1.2, 0.8);
-	}
-
-	100% {
-		transform: scale(1, 1);
-	}
-}
 </style>

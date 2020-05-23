@@ -59,7 +59,8 @@ export default Vue.extend({
 
 	.buttons {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
+		margin: 15px 10px;
 
 		.undo-redo button:last-child {
 			margin-left: 5px;

@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
-		appLoading: true
+		appLoading: false
 	},
 	getters: {
 		appLoading: (state) => state.appLoading

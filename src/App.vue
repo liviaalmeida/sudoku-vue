@@ -7,8 +7,8 @@
       <h1>Sudoku Vue</h1>
     </header>
     <nav>
-      <router-link to="/score">Score</router-link>
-      <router-link to="/">X</router-link>
+      <router-link to="/score" class="score">Score</router-link>
+      <router-link to="/" class="close">X</router-link>
     </nav>
     <router-view/>
   </div>
@@ -48,18 +48,34 @@ header {
   }
 }
 
+$nav-hmargin: 15px;
+
 nav {
   display: flex;
   justify-content: space-between;
-  margin-left: 45%;
+  margin: $nav-hmargin 5px $nav-hmargin 47%;
 
   a {
-    font-weight: bold;
-    color: $dark-green;
+    color: $main-green;
     text-decoration-line: none;
 
     // &.router-link-exact-active {
     // }
+
+    &.score {
+      font-weight: bold;
+      align-self: center;
+
+      &:hover {
+        animation: jello .5s 1 ease-in-out;
+        text-decoration-line: underline;
+      }
+    }
+
+    &.close {
+      align-self: flex-end;
+      font-size: 14px;
+    }
   }
 }
 
