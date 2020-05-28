@@ -11,13 +11,12 @@ export class Board extends Array<Array<number>> {
 			const iterable = { length: 9 }
 			initial = Array.from(iterable, () => Array.from(iterable, () => 0))
 		}
-
-		super(...copyBoard(initial))
-		this.initial = copyBoard(initial)
-
 		if (solution === undefined) {
 			solution = copyBoard(initial)
 		}
+
+		super(...copyBoard(initial))
+		this.initial = copyBoard(initial)
 		this.solution = copyBoard(solution)
 	}
 
@@ -27,6 +26,12 @@ export class Board extends Array<Array<number>> {
 
 	reset(): void {
 		this.initial.forEach(
+			(row, r) => row.forEach((value, c) => { super[r][c] = value })
+		)
+	}
+
+	solve(): void {
+		this.solution.forEach(
 			(row, r) => row.forEach((value, c) => { super[r][c] = value })
 		)
 	}

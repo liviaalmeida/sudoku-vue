@@ -54,10 +54,6 @@ export default Vue.extend({
 @import "~@/assets/scss/button.scss";
 
 .home {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-
 	.buttons {
 		display: flex;
 		justify-content: space-between;

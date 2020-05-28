@@ -13,7 +13,7 @@
     <nav>
       <router-link to="/" class="close">X</router-link>
     </nav>
-    <router-view/>
+    <router-view class="router-view"/>
   </div>
 </template>
 
@@ -34,6 +34,8 @@ html, body, #app {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -97,6 +99,15 @@ nav {
       font-size: 14px;
     }
   }
+}
+
+.router-view {
+  display: flex;
+	flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  flex: 1;
+  overflow-y: auto;
 }
 
 </style>
