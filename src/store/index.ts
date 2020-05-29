@@ -6,22 +6,29 @@ import ScoreStore from './score'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export interface RootState {
+	appLoading: boolean;
+}
+
+export default new Vuex.Store<RootState>({
 	state: {
-		appLoading: false
+		appLoading: true
 	},
 	getters: {
 		appLoading: (state) => state.appLoading
 	},
 	mutations: {
-		startLoading(state) {
-			state.appLoading = true
-		},
-		stopLoading(state) {
-			state.appLoading = false
+		updateLoading(state, value: boolean) {
+			state.appLoading = value
 		}
 	},
 	actions: {
+		startLoad(context) {
+			context.commit('updateLoading', true)
+		},
+		stopLoad(context) {
+			context.commit('updateLoading', false)
+		}
 	},
 	modules: {
 		GameStore,

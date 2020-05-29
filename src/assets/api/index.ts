@@ -1,5 +1,6 @@
-import { Level } from '@/domain/Level'
 import { Board } from '@/domain/Board'
+import { Level } from '@/domain/Level'
+import { Matrix } from '@/domain/Matrix'
 
 export class Sugoku {
 	private static request: XMLHttpRequest = new XMLHttpRequest()
@@ -17,7 +18,7 @@ export class Sugoku {
 		return `board=${encodeURIComponent(JSON.stringify(board))}`
 	}
 
-	private static getAsync(): Promise<any> {
+	private static getAsync(): Promise<Matrix<number>> {
 		Sugoku.request.open('GET', Sugoku.boardURL)
 		Sugoku.request.send()
 		return new Promise(resolve => {
@@ -35,13 +36,13 @@ export class Sugoku {
 	}
 
 	static set difficulty(difficulty: Level) {
-		Sugoku._difficulty = difficulty 
+		Sugoku._difficulty = difficulty
 	}
 
 	static async newAsync(): Promise<Board> {
 		let board: Board = new Board()
 		await Sugoku.getAsync()
-			.then((b: any) => board = new Board(b))
+			.then((b: Matrix<number>) => { board = new Board(b) })
 		return board
 	}
 
