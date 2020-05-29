@@ -3,15 +3,15 @@
     <header>
       <div class="pseudo-button">00:00:00</div>
       <span class="page-title">
-        <router-link to="/">
+        <router-link to="/" class="logo-link">
           <img alt="Vue logo" class="logo" src="./assets/logo.png">
         </router-link>
         <h1>Sudoku Vue</h1>
       </span>
-      <router-link to="/score" class="pseudo-button score">Score</router-link>
+      <router-link to="/score" class="pseudo-button">Score</router-link>
     </header>
     <nav>
-      <router-link to="/" class="close">X</router-link>
+      <router-link to="/">X</router-link>
     </nav>
     <router-view class="router-view"/>
   </div>
@@ -78,6 +78,10 @@ a {
 
   &:hover {
     animation: jello .5s 1 ease-in-out;
+  }
+
+  &.router-link-exact-active:not(.logo-link) {
+    visibility: hidden;
   }
 }
 
