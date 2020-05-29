@@ -67,8 +67,7 @@ header {
 }
 
 nav {
-  display: flex;
-  justify-content: flex-end;
+  text-align: right;
   margin: 5px 10px;
 }
 
@@ -79,15 +78,6 @@ a {
 
   &:hover {
     animation: jello .5s 1 ease-in-out;
-  }
-
-  &.score {
-    align-self: center;
-  }
-
-  &.close {
-    align-self: flex-end;
-    font-size: 14px;
   }
 }
 
