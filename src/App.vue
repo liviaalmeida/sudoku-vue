@@ -65,39 +65,30 @@ header {
     height: 30px;
     margin-right: 5px;
   }
-
-  .score {
-    text-decoration-line: none;
-  }
-
-  .logo:hover, .score:hover {
-    animation: jello .5s 1 ease-in-out;
-  }
 }
 
 nav {
   display: flex;
   justify-content: flex-end;
   margin: 5px 10px;
+}
 
-  a {
-    color: $main-green;
-    text-decoration-line: none;
+a {
+  color: $main-green;
+  text-decoration-line: none;
 
-    &.score {
-      font-weight: bold;
-      align-self: center;
+  &:hover {
+    animation: jello .5s 1 ease-in-out;
+  }
 
-      &:hover {
-        animation: jello .5s 1 ease-in-out;
-        text-decoration-line: underline;
-      }
-    }
+  &.score {
+    font-weight: bold;
+    align-self: center;
+  }
 
-    &.close {
-      align-self: flex-end;
-      font-size: 14px;
-    }
+  &.close {
+    align-self: flex-end;
+    font-size: 14px;
   }
 }
 
