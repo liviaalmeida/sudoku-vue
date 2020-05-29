@@ -53,7 +53,6 @@ header {
     background-color: white;
     padding: 5px 10px;
     border-radius: 3px;
-    font-weight: bold;
   }
 
   .page-title {
@@ -76,13 +75,13 @@ nav {
 a {
   color: $main-green;
   text-decoration-line: none;
+  font-weight: bold;
 
   &:hover {
     animation: jello .5s 1 ease-in-out;
   }
 
   &.score {
-    font-weight: bold;
     align-self: center;
   }
 
