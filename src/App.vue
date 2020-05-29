@@ -13,7 +13,9 @@
     <nav>
       <router-link to="/">X</router-link>
     </nav>
-    <router-view class="router-view"/>
+    <transition name="slide">
+      <router-view class="router-view"/>
+    </transition>
   </div>
 </template>
 
@@ -92,6 +94,20 @@ a {
   justify-content: space-between;
   flex: 1;
   overflow-y: auto;
+}
+
+$slide-transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+.slide-leave-to {
+  transform: translateY(-15px);
+  opacity: 0;
+  transition: $slide-transition;
+  overflow-y: hidden;
+}
+.slide-enter, .slide-enter-to {
+  display: none;
+}
+.slide-enter-active {
+  transition: $slide-transition;
 }
 
 </style>
