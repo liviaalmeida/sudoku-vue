@@ -4,8 +4,8 @@
 			<button class="regular">New</button>
 			<button class="regular">Reset</button>
 		</div>
-		<Loading class="loader" />
-		<Board />
+		<Loading v-if="appLoading" class="loader" />
+		<Board v-else />
 		<div class="buttons">
 			<span class="undo-redo">
 				<button class="round">&#8630;</button>
